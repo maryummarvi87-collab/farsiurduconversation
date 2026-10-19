@@ -103,6 +103,7 @@ document.addEventListener('click',function(e){
  if(found){openDetail({fa:found.f||found.fa,ur:found.u||found.ur,ro:found.r||found.ro,v:found.v,tag:'لفظ کا معنی'});}
  else{openDetail({fa:word,ur:'اس لفظ کا معنی ابھی شامل نہیں۔',tag:'لفظ کا معنی'});}
 });
+function faShown(p){return (p.v&&p.v.trim())?p.v:p.fa;}
 function isCmp(p){return p.lit||p.ir||p.da||p.ta;}
 function openDetail(d){
  const r=document.getElementById('modalRoot');
@@ -114,8 +115,7 @@ function openDetail(d){
  r.innerHTML='<div class="modal" onclick="if(event.target===this)closeModal()"><div class="modal-box">'+
   '<button class="modal-close" onclick="closeModal()">✕</button>'+
   (d.tag?'<span class="tag">'+esc(d.tag)+'</span>':'')+
-  '<h3>'+esc(d.fa)+'</h3>'+
-  (d.v&&d.v!==d.fa?'<div class="voc">'+esc(d.v)+'</div>':'')+
+  '<h3>'+esc((d.v&&d.v.trim())?d.v:d.fa)+'</h3>'+
   (d.ro?'<div class="rom">'+esc(d.ro)+'</div>':'')+
   (d.ur?'<div style="margin-top:8px;font-size:1.15em">'+esc(d.ur)+'</div>':'')+
   wm+'</div></div>';
@@ -123,7 +123,7 @@ function openDetail(d){
 function closeModal(){document.getElementById('modalRoot').innerHTML='';}
 function pairHTML(p,tag,idx){
  return '<div class="card" onclick=\'openDetail('+JSON.stringify({fa:p.fa,ur:p.ur,ro:p.ro,v:p.v,w:p.w,tag:tag||''}).replace(/'/g,"&#39")+')\'>'+
-  '<div class="pair" style="border:none;padding:4px"><span class="fa">'+wordTapHTML(p.fa,idx)+'</span><span class="ur">'+esc(p.ur)+'</span></div>'+
+  '<div class="pair" style="border:none;padding:4px"><span class="fa">'+wordTapHTML(faShown(p),idx)+'</span>'<span class="ur">'+esc(p.ur)+'</span></div>'+
   (p.ro?'<div class="roman">'+esc(p.ro)+'</div>':'')+'</div>';
 }
 function renderSection(key){
@@ -143,7 +143,7 @@ function renderSection(key){
    const tag=p.who||'';
    const idx=CURITEMS.length;CURITEMS.push(p);
    return '<div onclick=\'openDetail('+JSON.stringify({fa:p.fa,ur:p.ur,ro:p.ro,v:p.v,w:p.w,tag:tag}).replace(/'/g,"&#39")+');event.stopPropagation()\' style="cursor:pointer">'+
-    '<div class="pair"><span class="fa">'+(p.who?esc(p.who)+': ':'')+wordTapHTML(p.fa,idx)+'</span><span class="ur">'+esc(p.ur)+'</span></div>'+
+    '<div class="pair"><span class="fa">'+(p.who?esc(p.who)+': ':'')+wordTapHTML(faShown(p),idx)+'</span>'<span class="ur">'+esc(p.ur)+'</span></div>'+
     (p.ro?'<div class="roman">'+esc(p.ro)+'</div>':'')+'</div>';
   }).join('');
   return h+'</div>';
@@ -194,7 +194,7 @@ function renderDialects(c){
    }
    const idx=CURITEMS.length;CURITEMS.push(p);
    return '<div onclick=\'openDetail('+JSON.stringify({fa:p.fa,ur:p.ur,ro:p.ro,v:p.v,w:p.w,tag:d.name}).replace(/'/g,"&#39")+');event.stopPropagation()\' style="cursor:pointer">'+
-    '<div class="pair"><span class="fa">'+wordTapHTML(p.fa,idx)+'</span><span class="ur">'+esc(p.ur)+'</span></div>'+
+    '<div class="pair"><span class="fa">'+wordTapHTML(faShown(p),idx)+'</span><span class="ur">'+esc(p.ur)+'</span></div>'+
     (p.ro?'<div class="roman">'+esc(p.ro)+'</div>':'')+'</div>';
   }).join('');
   return h+'</div>';
