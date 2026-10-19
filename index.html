@@ -45,12 +45,19 @@ footer{text-align:center;color:#999;padding:24px;font-size:.9em}
 .hint{text-align:center;color:#999;font-size:.9em;padding:8px}
 .w{color:#0f5c46;border-bottom:1px dotted #1a8a68;cursor:pointer}
 .w:hover{background:#e8f5ef}
+.modal{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;z-index:999}
+.modal-box{background:#fff;border-radius:12px;padding:20px;max-width:420px;width:92%;max-height:85vh;overflow:auto;position:relative}
+.modal-x{position:absolute;top:8px;left:12px;font-size:1.6em;cursor:pointer;color:#999}
+.modal-box label{display:block;margin:10px 0 4px;font-weight:bold}
+.modal-box textarea,.modal-box input{width:100%;padding:8px;border:1px solid #ddd;border-radius:8px;font-size:1em;box-sizing:border-box}
+#corrBtn{margin-left:8px}
 </style>
 </head>
 <body>
 <header>
 <h1>فارسی اردو بول چال</h1>
 <p>فارسی سیکھیں اردو کے ذریعے — اسباق، گرامر، کہانیاں، لغت</p>
+<a class="dl-btn" id="corrBtn" href="javascript:void(0)" onclick="openCorr()">✏️ تصحیح بھیجیں</a>
 <a class="dl-btn" id="apkBtn" href="https://muse.ai/files/1301393523063776/3871532466543202/5lmwsl8qevqy8vnt08w433hp/farsi_urdu_app.apk">📱 ایپ ڈاؤن لوڈ کریں</a>
 </header>
 <nav id="tabs"></nav>
@@ -211,6 +218,37 @@ fetch('content.json').then(r=>r.json()).then(d=>{
  });
  renderSection('lessons');
 }).catch(()=>{document.getElementById('content').innerHTML='<div class="card">مواد لوڈ نہیں ہو سکا۔</div>';});
+</script>
+
+<div id="corrModal" class="modal" style="display:none">
+<div class="modal-box">
+<span class="modal-x" onclick="closeCorr()">&times;</span>
+<h3>✏️ تصحیح بھیجیں</h3>
+<p style="color:#666;font-size:.9em">غلطی کہاں ہے اور درست کیا ہونا چاہیے — لکھ کر بھیجیں</p>
+<label>متعلقہ لفظ / جملہ</label>
+<textarea id="cText" rows="2" placeholder="جس لفظ یا جملے میں غلطی ہے"></textarea>
+<label>درست صورت / آپ کی تجویز</label>
+<textarea id="cFix" rows="3" placeholder="صحیح کیا ہونا چاہیے؟"></textarea>
+<label>آپ کا نام (اختیاری)</label>
+<input id="cName" type="text" placeholder="نام">
+<button class="dl-btn" onclick="genCorr()">تیار کریں</button>
+<div id="cOut" style="display:none;margin-top:12px">
+<textarea id="cMsg" rows="5" readonly></textarea>
+<button class="dl-btn" onclick="copyCorr()">📋 کاپی کریں</button>
+<p style="font-size:.85em;color:#666">کاپی کر کے عائش کو بھیج دیں</p>
+</div>
+</div>
+</div>
+<script>
+function openCorr(prefill){var m=document.getElementById('corrModal');m.style.display='flex';if(prefill)document.getElementById('cText').value=prefill;}
+function closeCorr(){document.getElementById('corrModal').style.display='none';}
+function genCorr(){var t=document.getElementById('cText').value.trim(),f=document.getElementById('cFix').value.trim(),n=document.getElementById('cName').value.trim();
+if(!t||!f){alert('براہ کرم دونوں خانے پُر کریں');return;}
+var msg='تصحیح:\nمتعلقہ: '+t+'\nدرست: '+f+(n?'\nبھیجنے والا: '+n:'');
+document.getElementById('cMsg').value=msg;document.getElementById('cOut').style.display='block';}
+function copyCorr(){var e=document.getElementById('cMsg');e.select();document.execCommand('copy');alert('کاپی ہو گیا');}
+// URL param ?correct=... to prefill from app
+(function(){var q=new URLSearchParams(location.search);var c=q.get('correct');if(c)openCorr(decodeURIComponent(c));})();
 </script>
 </body>
 </html>
