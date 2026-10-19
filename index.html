@@ -63,6 +63,7 @@ const SECTIONS=[
  {key:'lessons',label:'📖 اسباق'},
  {key:'grammar',label:'📝 گرامر'},
  {key:'conversation',label:'💬 بول چال'},
+ {key:'sentences',label:'💭 جملے'},
  {key:'articles',label:'📰 مضامین'},
  {key:'stories',label:'📚 کہانیاں'},
  {key:'poems',label:'🎭 نظمیں'},
@@ -130,6 +131,7 @@ function renderSection(key){
  CURITEMS=[];
  if(key==='dictionary')return renderDict(c);
  if(key==='dialects')return renderDialects(c);
+ if(key==='sentences')return renderSentences(c);
  const items=DATA[key]||[];
  if(!items.length){c.innerHTML='<div class="card">ابھی مواد موجود نہیں۔</div>';return;}
  c.innerHTML=items.map(it=>{
@@ -146,6 +148,23 @@ function renderSection(key){
   }).join('');
   return h+'</div>';
  }).join('');
+}
+function renderSentences(c,filter){
+ const items=(DATA.sentences||[]).filter(s=>{
+  if(!filter)return true;
+  const f=filter.trim();
+  return (s.fa||'').includes(f)||(s.ur||'').includes(f);
+ });
+ CURITEMS=items;
+ c.innerHTML='<input class="dict-search" id="ss" placeholder="جملہ تلاش کریں… (فارسی یا اردو)">'+
+  (items.length?items.map((s,i)=>{
+   return '<div class="card" onclick=\'openDetail('+JSON.stringify({fa:s.fa,ur:s.ur,ro:s.ro,v:s.v,w:s.w,tag:'جملہ'}).replace(/'/g,"&#39")+')\'>'+
+    '<div class="pair" style="border:none;padding:4px"><span class="fa">'+wordTapHTML(s.fa,i)+'</span><span class="ur">'+esc(s.ur)+'</span></div>'+
+    (s.ro?'<div class="roman">'+esc(s.ro)+'</div>':'')+'</div>';
+  }).join(''):'<div class="card">ابھی کوئی جملہ شامل نہیں۔</div>');
+ const inp=document.getElementById('ss');
+ if(inp){inp.addEventListener('input',()=>renderSentences(c,inp.value));
+ if(filter!==undefined){inp.value=filter;inp.focus();}}
 }
 function renderDict(c,filter){
  const items=(DATA.dictionary||[]).filter(d=>{
