@@ -6,7 +6,7 @@
 <title>فارسی اردو بول چال</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:"Noto Nastaliq Urdu","Jameel Noori Nastaleeq","Urdu Typesetting",serif;background:#f7f3ea;color:#2d2a26;line-height:2.2}
+body{font-family:"Noto Nastaliq Urdu","Jameel Noori Nastaleeq",serif;background:#f7f3ea;color:#2d2a26;line-height:2.2}
 header{background:linear-gradient(135deg,#0f5c46,#1a8a68);color:#fff;padding:28px 16px;text-align:center}
 header h1{font-size:2em;margin-bottom:4px}
 header p{opacity:.9;font-size:1.05em}
@@ -14,32 +14,50 @@ nav{position:sticky;top:0;z-index:10;background:#0c4a38;display:flex;overflow-x:
 nav button{background:none;border:none;color:#e8f5ef;font-family:inherit;font-size:1.05em;padding:12px 16px;cursor:pointer;white-space:nowrap}
 nav button.active{background:#1a8a68;font-weight:bold}
 main{max-width:900px;margin:0 auto;padding:20px 14px 60px}
-.card{background:#fff;border-radius:12px;padding:18px;margin-bottom:16px;box-shadow:0 2px 8px rgba(0,0,0,.07)}
+.card{background:#fff;border-radius:12px;padding:18px;margin-bottom:16px;box-shadow:0 2px 8px rgba(0,0,0,.07);cursor:pointer}
+.card:hover{box-shadow:0 4px 14px rgba(0,0,0,.12)}
 .card h2{color:#0f5c46;font-size:1.4em;margin-bottom:4px}
 .card .sub{color:#777;font-size:.95em;margin-bottom:10px}
 .pair{display:flex;justify-content:space-between;gap:12px;padding:10px 4px;border-bottom:1px dashed #e5ddcb}
 .pair:last-child{border-bottom:none}
 .pair .fa{color:#0f5c46;font-weight:bold;flex:1}
 .pair .ur{color:#5a5248;flex:1;text-align:left}
+.roman{font-size:.85em;color:#1a8a68;font-style:italic;direction:ltr;text-align:right;margin-top:2px}
 .body-text{white-space:pre-line}
 .dict-search{width:100%;padding:12px;font-family:inherit;font-size:1.1em;border:2px solid #1a8a68;border-radius:10px;margin-bottom:14px;direction:rtl}
 .tag{display:inline-block;background:#e8f5ef;color:#0f5c46;border-radius:20px;padding:2px 12px;font-size:.85em;margin-top:6px}
-.dialect .ph{margin-top:8px}
 .dl-btn{display:inline-block;background:#1a8a68;color:#fff;text-decoration:none;padding:14px 34px;border-radius:30px;font-size:1.2em;margin-top:10px}
 footer{text-align:center;color:#999;padding:24px;font-size:.9em}
 .hidden{display:none}
 .loading{text-align:center;padding:40px;color:#777}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:50;display:flex;align-items:flex-end;justify-content:center}
+.modal-box{background:#fff;border-radius:20px 20px 0 0;max-width:640px;width:100%;max-height:85vh;overflow-y:auto;padding:24px 20px 30px;direction:rtl}
+.modal-box h3{color:#0f5c46;font-size:1.5em}
+.modal-box .voc{color:#b8860b;font-size:1.3em;margin-top:6px}
+.modal-box .rom{color:#1a8a68;font-style:italic;direction:ltr;text-align:right;margin-top:6px}
+.modal-box .wm{margin-top:12px}
+.modal-box .wm table{width:100%;border-collapse:collapse}
+.modal-box .wm td{padding:6px 4px;border-bottom:1px solid #eee}
+.modal-close{float:left;background:#eee;border:none;border-radius:50%;width:36px;height:36px;font-size:1.2em;cursor:pointer}
+.cmp-row{display:flex;gap:8px;padding:8px 4px;border-bottom:1px dashed #e5ddcb;align-items:baseline}
+.cmp-row .lbl{min-width:80px;font-size:.85em;color:#1a8a68;font-weight:bold}
+.cmp-row .txt{flex:1;color:#0f5c46;font-weight:bold}
+.hint{text-align:center;color:#999;font-size:.9em;padding:8px}
+.w{color:#0f5c46;border-bottom:1px dotted #1a8a68;cursor:pointer}
+.w:hover{background:#e8f5ef}
 </style>
 </head>
 <body>
 <header>
 <h1>فارسی اردو بول چال</h1>
 <p>فارسی سیکھیں اردو کے ذریعے — اسباق، گرامر، کہانیاں، لغت</p>
-<a class="dl-btn" id="apkBtn" href="#">📱 ایپ ڈاؤن لوڈ کریں</a>
+<a class="dl-btn" id="apkBtn" href="https://muse.ai/files/1301393523063776/3871532466543202/5lmwsl8qevqy8vnt08w433hp/farsi_urdu_app.apk">📱 ایپ ڈاؤن لوڈ کریں</a>
 </header>
 <nav id="tabs"></nav>
 <main id="content"><div class="loading">مواد لوڈ ہو رہا ہے…</div></main>
+<div class="hint">کسی بھی لفظ یا جملے پر ٹیپ کریں — تفصیل کھلے گی</div>
 <footer>فارسی اردو بول چال</footer>
+<div id="modalRoot"></div>
 <script>
 const SECTIONS=[
  {key:'lessons',label:'📖 اسباق'},
@@ -52,42 +70,120 @@ const SECTIONS=[
  {key:'dialects',label:'🗣️ لہجے'}
 ];
 let DATA={};
-function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;')}
+let CURITEMS=[];
+function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;')}
+function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;')}
+function norm(s){return String(s||'').replace(/[ً-ٰٟـ‌‍‎‏]/g,'').replace(/[يىېےۓئ]/g,'ی').replace(/كڪ/g,'ک').replace(/[ہھةۀۂۃ]/g,'ه').replace(/[أإآٱ]/g,'ا').replace(/ؤ/g,'و').replace(/ٹ/g,'ت').replace(/ڈ/g,'د').replace(/ڑ/g,'ر').replace(/ں/g,'ن').replace(/[۰۱۲۳۴۵۶۷۸۹]/g,function(d){return '۰۱۲۳۴۵۶۷۸۹'.indexOf(d)}).replace(/[٠١٢٣٤٥٦٧٨٩]/g,function(d){return '٠١٢٣٤٥٦٧٨٩'.indexOf(d)}).replace(/\s+/g,' ').trim().toLowerCase();}
+let DICTMAP={};
+function buildDictMap(){
+ DICTMAP={};
+ (DATA.dictionary||[]).forEach(d=>{const k=norm(d.fa);if(k&&!DICTMAP[k])DICTMAP[k]=d;});
+}
+function wordTapHTML(fa,idx){
+ return String(fa).split(/(\s+)/).map(function(part){
+  if(!part.trim())return esc(part);
+  return '<span class="w" data-w="'+esc(part).replace(/"/g,'&quot;')+'" data-i="'+idx+'">'+esc(part)+'</span>';
+ }).join('');
+}
+function lookupWord(word,wlist){
+ const nw=norm(word);
+ if(wlist)for(const m of wlist){if(norm(m.f)===nw)return m;}
+ return DICTMAP[nw]||null;
+}
+document.addEventListener('click',function(e){
+ const el=e.target.closest('.w');
+ if(!el)return;
+ e.stopPropagation();
+ const word=el.getAttribute('data-w');
+ const idx=el.getAttribute('data-i');
+ let wlist=null;
+ if(idx!==null&&CURITEMS[+idx])wlist=CURITEMS[+idx].w;
+ const found=lookupWord(word,wlist);
+ if(found){openDetail({fa:found.f||found.fa,ur:found.u||found.ur,ro:found.r||found.ro,v:found.v,tag:'لفظ کا معنی'});}
+ else{openDetail({fa:word,ur:'اس لفظ کا معنی ابھی شامل نہیں۔',tag:'لفظ کا معنی'});}
+});
+function isCmp(p){return p.lit||p.ir||p.da||p.ta;}
+function openDetail(d){
+ const r=document.getElementById('modalRoot');
+ let wm='';
+ if(d.w&&d.w.length){
+  wm='<div class="wm"><b style="color:#0f5c46">لفظی معانی</b><table>'+
+   d.w.map(x=>'<tr><td><b>'+esc(x.f)+'</b></td><td style="direction:ltr;text-align:left;font-style:italic">'+esc(x.r)+'</td><td style="text-align:left">'+esc(x.u)+'</td></tr>').join('')+'</table></div>';
+ }
+ r.innerHTML='<div class="modal" onclick="if(event.target===this)closeModal()"><div class="modal-box">'+
+  '<button class="modal-close" onclick="closeModal()">✕</button>'+
+  (d.tag?'<span class="tag">'+esc(d.tag)+'</span>':'')+
+  '<h3>'+esc(d.fa)+'</h3>'+
+  (d.v&&d.v!==d.fa?'<div class="voc">'+esc(d.v)+'</div>':'')+
+  (d.ro?'<div class="rom">'+esc(d.ro)+'</div>':'')+
+  (d.ur?'<div style="margin-top:8px;font-size:1.15em">'+esc(d.ur)+'</div>':'')+
+  wm+'</div></div>';
+}
+function closeModal(){document.getElementById('modalRoot').innerHTML='';}
+function pairHTML(p,tag,idx){
+ return '<div class="card" onclick=\'openDetail('+JSON.stringify({fa:p.fa,ur:p.ur,ro:p.ro,v:p.v,w:p.w,tag:tag||''}).replace(/'/g,"&#39")+')\'>'+
+  '<div class="pair" style="border:none;padding:4px"><span class="fa">'+wordTapHTML(p.fa,idx)+'</span><span class="ur">'+esc(p.ur)+'</span></div>'+
+  (p.ro?'<div class="roman">'+esc(p.ro)+'</div>':'')+'</div>';
+}
 function renderSection(key){
  const c=document.getElementById('content');
+ CURITEMS=[];
  if(key==='dictionary')return renderDict(c);
+ if(key==='dialects')return renderDialects(c);
  const items=DATA[key]||[];
  if(!items.length){c.innerHTML='<div class="card">ابھی مواد موجود نہیں۔</div>';return;}
  c.innerHTML=items.map(it=>{
-  let h='<div class="card">';
+  let h='<div class="card" style="cursor:default">';
   if(it.title)h+='<h2>'+esc(it.title)+'</h2>';
   if(it.subtitle)h+='<div class="sub">'+esc(it.subtitle)+'</div>';
-  if(it.name)h+='<h2>'+esc(it.name)+'</h2>';
-  if(it.region)h+='<div class="sub">'+esc(it.region)+'</div>';
   if(it.body)h+='<div class="body-text">'+esc(it.body)+'</div>';
-  if(it.note)h+='<div class="body-text">'+esc(it.note)+'</div>';
   if(it.items)h+=it.items.map(p=>{
-   if(p.who)return '<div class="pair"><span class="fa">'+esc(p.who)+': '+esc(p.fa)+'</span><span class="ur">'+esc(p.ur)+'</span></div>';
-   return '<div class="pair"><span class="fa">'+esc(p.fa)+'</span><span class="ur">'+esc(p.ur)+'</span></div>';
+   const tag=p.who||'';
+   const idx=CURITEMS.length;CURITEMS.push(p);
+   return '<div onclick=\'openDetail('+JSON.stringify({fa:p.fa,ur:p.ur,ro:p.ro,v:p.v,w:p.w,tag:tag}).replace(/'/g,"&#39")+');event.stopPropagation()\' style="cursor:pointer">'+
+    '<div class="pair"><span class="fa">'+(p.who?esc(p.who)+': ':'')+wordTapHTML(p.fa,idx)+'</span><span class="ur">'+esc(p.ur)+'</span></div>'+
+    (p.ro?'<div class="roman">'+esc(p.ro)+'</div>':'')+'</div>';
   }).join('');
-  if(it.phrases)h+='<div class="ph">'+it.phrases.map(p=>'<div class="pair"><span class="fa">'+esc(p.fa)+'</span><span class="ur">'+esc(p.ur)+'</span></div>').join('')+'</div>';
   return h+'</div>';
  }).join('');
 }
 function renderDict(c,filter){
  const items=(DATA.dictionary||[]).filter(d=>{
   if(!filter)return true;
-  f=filter.trim();
-  return d.fa.includes(f)||d.ur.includes(f);
+  const f=filter.trim();
+  return (d.fa||'').includes(f)||(d.ur||'').includes(f);
  });
- c.innerHTML='<input class="dict-search" id="ds" placeholder="لغت میں تلاش کریں… (فارسی یا اردو)">'
- +'<div class="card">'+items.map(d=>'<div class="pair"><span class="fa">'+esc(d.fa)+'</span><span class="ur">'+esc(d.ur)+'</span></div><span class="tag">'+esc(d.pos||'')+'</span>').join('')+'</div>';
+ CURITEMS=items;
+ c.innerHTML='<input class="dict-search" id="ds" placeholder="لغت میں تلاش کریں… (فارسی یا اردو)">'+
+  items.map((d,i)=>pairHTML(d,d.pos,i)).join('');
  const inp=document.getElementById('ds');
  inp.addEventListener('input',()=>renderDict(c,inp.value));
- if(filter!==undefined){inp.value=filter;inp.focus();}
+ if(filter!==undefined){inp.value=filter;inp.focus();const v=inp.value;inp.value='';inp.value=v;}
+}
+function renderDialects(c){
+ const ds=DATA.dialects||[];
+ CURITEMS=[];
+ c.innerHTML=ds.map(d=>{
+  let h='<div class="card" style="cursor:default"><h2>'+esc(d.name)+'</h2><div class="sub">'+esc(d.region||'')+'</div>';
+  if(d.note)h+='<div class="sub">'+esc(d.note)+'</div>';
+  h+=(d.phrases||[]).map(p=>{
+   if(isCmp(p)){
+    const rows=[['📜 ادبی',p.lit],['🇮🇷 ایرانی',p.ir],['🇦🇫 دری',p.da],['🇹🇯 تاجیکی',p.ta]]
+     .filter(r=>r[1]).map(r=>'<div class="cmp-row"><span class="lbl">'+r[0]+'</span><span class="txt">'+esc(r[1])+'</span></div>').join('');
+    return '<div style="cursor:pointer" onclick=\'openDetail('+JSON.stringify({fa:p.lit||p.ir,ur:p.ur,tag:'لہجوں کا فرق'}).replace(/'/g,"&#39")+');event.stopPropagation()\">'+rows+
+     (p.ur?'<div style="color:#5a5248;padding:4px">'+esc(p.ur)+'</div>':'')+'</div>';
+   }
+   const idx=CURITEMS.length;CURITEMS.push(p);
+   return '<div onclick=\'openDetail('+JSON.stringify({fa:p.fa,ur:p.ur,ro:p.ro,v:p.v,w:p.w,tag:d.name}).replace(/'/g,"&#39")+');event.stopPropagation()\' style="cursor:pointer">'+
+    '<div class="pair"><span class="fa">'+wordTapHTML(p.fa,idx)+'</span><span class="ur">'+esc(p.ur)+'</span></div>'+
+    (p.ro?'<div class="roman">'+esc(p.ro)+'</div>':'')+'</div>';
+  }).join('');
+  return h+'</div>';
+ }).join('');
 }
 fetch('content.json').then(r=>r.json()).then(d=>{
  DATA=d;
+ buildDictMap();
  const nav=document.getElementById('tabs');
  nav.innerHTML=SECTIONS.map((s,i)=>'<button data-k="'+s.key+'" class="'+(i===0?'active':'')+'">'+s.label+'</button>').join('');
  nav.querySelectorAll('button').forEach(b=>b.onclick=()=>{
