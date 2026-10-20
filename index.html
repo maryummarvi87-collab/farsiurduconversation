@@ -44,6 +44,7 @@ footer{text-align:center;color:#999;padding:24px;font-size:.9em}
 .conj .pr{color:#777;font-size:.9em;width:120px}
 .conj .ff{color:#0f5c46;font-weight:bold}
 .conj .rr{direction:ltr;text-align:left;color:#1a8a68;font-style:italic;font-size:.9em}
+.conj .uu{color:#5a5248;text-align:left}
 details{margin-top:10px}
 details summary{cursor:pointer;color:#1a8a68;font-weight:bold}
 .cmp-row{display:flex;gap:8px;padding:8px 4px;border-bottom:1px dashed #e5ddcb;align-items:baseline}
@@ -197,7 +198,7 @@ function renderVerbs(c,filter){
   (items.length?items.map(v=>{
    const groups=(v.groups||[]).map(g=>
     '<div style="margin-top:10px"><b style="color:#0f5c46">'+esc(g.name)+'</b><table class="conj">'+
-    g.forms.map(fm=>'<tr><td class="pr">'+esc(fm.p)+' ('+esc(PRONUR[fm.p]||'')+')</td><td class="ff">'+esc(fm.fa)+'</td><td class="rr">'+esc(fm.ro)+'</td></tr>').join('')+'</table></div>').join('');
+    g.forms.map(fm=>'<tr><td class="pr">'+esc(fm.p)+' ('+esc(PRONUR[fm.p]||'')+')</td><td class="ff">'+esc(fm.fa)+'</td><td class="rr">'+esc(fm.ro)+'</td><td class="uu">'+esc(fm.u||'')+'</td></tr>').join('')+'</table></div>').join('');
    return '<div class="card" style="cursor:default"><h2>'+esc((v.v&&v.v.trim())?v.v:v.fa)+'</h2>'+
     (v.ro?'<div class="roman">'+esc(v.ro)+'</div>':'')+
     '<div>'+esc(v.ur)+'</div>'+
