@@ -39,6 +39,13 @@ footer{text-align:center;color:#999;padding:24px;font-size:.9em}
 .modal-box .wm table{width:100%;border-collapse:collapse}
 .modal-box .wm td{padding:6px 4px;border-bottom:1px solid #eee}
 .modal-close{float:left;background:#eee;border:none;border-radius:50%;width:36px;height:36px;font-size:1.2em;cursor:pointer}
+.conj{width:100%;border-collapse:collapse;margin-top:6px}
+.conj td{padding:6px 4px;border-bottom:1px dashed #e5ddcb}
+.conj .pr{color:#777;font-size:.9em;width:120px}
+.conj .ff{color:#0f5c46;font-weight:bold}
+.conj .rr{direction:ltr;text-align:left;color:#1a8a68;font-style:italic;font-size:.9em}
+details{margin-top:10px}
+details summary{cursor:pointer;color:#1a8a68;font-weight:bold}
 .cmp-row{display:flex;gap:8px;padding:8px 4px;border-bottom:1px dashed #e5ddcb;align-items:baseline}
 .cmp-row .lbl{min-width:80px;font-size:.85em;color:#1a8a68;font-weight:bold}
 .cmp-row .txt{flex:1;color:#0f5c46;font-weight:bold}
@@ -75,6 +82,7 @@ const SECTIONS=[
  {key:'stories',label:'📚 کہانیاں'},
  {key:'poems',label:'🎭 نظمیں'},
  {key:'dictionary',label:'📕 لغت'},
+ {key:'verbs',label:'🔤 مصادر و گردان'},
  {key:'dialects',label:'🗣️ لہجے'}
 ];
 let DATA={};
@@ -130,18 +138,32 @@ function openDetail(d){
 function closeModal(){document.getElementById('modalRoot').innerHTML='';}
 function pairHTML(p,tag,idx){
  return '<div class="card" onclick=\'openDetail('+JSON.stringify({fa:p.fa,ur:p.ur,ro:p.ro,v:p.v,w:p.w,tag:tag||''}).replace(/'/g,"&#39")+')\'>'+
-  '<div class="pair" style="border:none;padding:4px"><span class="fa">'+wordTapHTML(faShown(p),idx)+'</span>'<span class="ur">'+esc(p.ur)+'</span></div>'+
+  '<div class="pair" style="border:none;padding:4px"><span class="fa">'+wordTapHTML(faShown(p),idx)+'</span><span class="ur">'+esc(p.ur)+'</span></div>'+
   (p.ro?'<div class="roman">'+esc(p.ro)+'</div>':'')+'</div>';
 }
-function renderSection(key){
+function renderSection(key,filter){
  const c=document.getElementById('content');
  CURITEMS=[];
  if(key==='dictionary')return renderDict(c);
- if(key==='dialects')return renderDialects(c);
- if(key==='sentences')return renderSentences(c);
- const items=DATA[key]||[];
- if(!items.length){c.innerHTML='<div class="card">ابھی مواد موجود نہیں۔</div>';return;}
- c.innerHTML=items.map(it=>{
+ if(key==='dialects')return renderDialects(c,filter);
+ if(key==='sentences')return renderSentences(c,filter);
+ if(key==='verbs')return renderVerbs(c,filter);
+ const nf=norm((filter||'').trim());
+ let items=DATA[key]||[];
+ if(nf){
+  items=items.map(it=>{
+   if(norm((it.title||'')+' '+(it.subtitle||'')).includes(nf))return it;
+   if(it.body)return norm(it.body).includes(nf)?it:null;
+   if(it.items){
+    const matched=it.items.filter(p=>norm((p.fa||'')+' '+(p.ur||'')+' '+(p.who||'')).includes(nf));
+    return matched.length?Object.assign({},it,{items:matched}):null;
+   }
+   return null;
+  }).filter(Boolean);
+ }
+ const searchBox='<input class="dict-search" id="gs" placeholder="اس حصے میں تلاش کریں… (عنوان، فارسی یا اردو)">';
+ if(!items.length){c.innerHTML=searchBox+'<div class="card">کوئی نتیجہ نہیں ملا۔</div>';bindSectionSearch(key,filter);return;}
+ c.innerHTML=searchBox+items.map(it=>{
   let h='<div class="card" style="cursor:default">';
   if(it.title)h+='<h2>'+esc(it.title)+'</h2>';
   if(it.subtitle)h+='<div class="sub">'+esc(it.subtitle)+'</div>';
@@ -150,11 +172,41 @@ function renderSection(key){
    const tag=p.who||'';
    const idx=CURITEMS.length;CURITEMS.push(p);
    return '<div onclick=\'openDetail('+JSON.stringify({fa:p.fa,ur:p.ur,ro:p.ro,v:p.v,w:p.w,tag:tag}).replace(/'/g,"&#39")+');event.stopPropagation()\' style="cursor:pointer">'+
-    '<div class="pair"><span class="fa">'+(p.who?esc(p.who)+': ':'')+wordTapHTML(faShown(p),idx)+'</span>'<span class="ur">'+esc(p.ur)+'</span></div>'+
+    '<div class="pair"><span class="fa">'+(p.who?esc(p.who)+': ':'')+wordTapHTML(faShown(p),idx)+'</span><span class="ur">'+esc(p.ur)+'</span></div>'+
     (p.ro?'<div class="roman">'+esc(p.ro)+'</div>':'')+'</div>';
   }).join('');
   return h+'</div>';
  }).join('');
+ bindSectionSearch(key,filter);
+}
+function bindSectionSearch(key,filter){
+ const inp=document.getElementById('gs');
+ if(!inp)return;
+ inp.addEventListener('input',()=>renderSection(key,inp.value));
+ if(filter!==undefined){inp.value=filter;inp.focus();const v=inp.value;inp.value='';inp.value=v;}
+}
+const PRONUR={'من':'میں','تو':'تو / تم','او':'وہ','ما':'ہم','شما':'آپ / تم'};
+PRONUR['آن\u200Cها']='وہ سب';
+function renderVerbs(c,filter){
+ const nf=norm((filter||'').trim());
+ let items=DATA.verbs||[];
+ if(nf)items=items.filter(v=>norm([v.fa,v.ur,v.past,v.pres,v.ro].join(' ')).includes(nf));
+ CURITEMS=[];
+ c.innerHTML='<input class="dict-search" id="vs" placeholder="مصدر تلاش کریں… (فارسی یا اردو)">'+
+  '<div class="hint">'+items.length+' مصادر — گردان دیکھنے کے لیے «گردان دیکھیں» دبائیں</div>'+
+  (items.length?items.map(v=>{
+   const groups=(v.groups||[]).map(g=>
+    '<div style="margin-top:10px"><b style="color:#0f5c46">'+esc(g.name)+'</b><table class="conj">'+
+    g.forms.map(fm=>'<tr><td class="pr">'+esc(fm.p)+' ('+esc(PRONUR[fm.p]||'')+')</td><td class="ff">'+esc(fm.fa)+'</td><td class="rr">'+esc(fm.ro)+'</td></tr>').join('')+'</table></div>').join('');
+   return '<div class="card" style="cursor:default"><h2>'+esc((v.v&&v.v.trim())?v.v:v.fa)+'</h2>'+
+    (v.ro?'<div class="roman">'+esc(v.ro)+'</div>':'')+
+    '<div>'+esc(v.ur)+'</div>'+
+    '<span class="tag">بنِ ماضی: '+esc(v.past)+'</span> <span class="tag">بنِ مضارع: '+esc(v.pres)+'</span>'+
+    '<details><summary>گردان دیکھیں</summary>'+groups+'</details></div>';
+  }).join(''):'<div class="card">کوئی مصدر نہیں ملا۔</div>');
+ const inp=document.getElementById('vs');
+ inp.addEventListener('input',()=>renderVerbs(c,inp.value));
+ if(filter!==undefined){inp.value=filter;inp.focus();const v=inp.value;inp.value='';inp.value=v;}
 }
 function renderSentences(c,filter){
  const items=(DATA.sentences||[]).filter(s=>{
@@ -186,13 +238,20 @@ function renderDict(c,filter){
  inp.addEventListener('input',()=>renderDict(c,inp.value));
  if(filter!==undefined){inp.value=filter;inp.focus();const v=inp.value;inp.value='';inp.value=v;}
 }
-function renderDialects(c){
+function renderDialects(c,filter){
  const ds=DATA.dialects||[];
+ const nf=norm((filter||'').trim());
  CURITEMS=[];
- c.innerHTML=ds.map(d=>{
+ c.innerHTML='<input class="dict-search" id="dl" placeholder="لہجوں میں تلاش کریں… (فارسی یا اردو)">'+ds.map(d=>{
+  let phrases=d.phrases||[];
+  if(nf){
+   const nameHit=norm((d.name||'')+' '+(d.region||'')).includes(nf);
+   if(!nameHit)phrases=phrases.filter(p=>isCmp(p)?norm([p.lit,p.ir,p.da,p.ta,p.ur].join(' ')).includes(nf):norm((p.fa||'')+' '+(p.ur||'')).includes(nf));
+   if(!phrases.length)return '';
+  }
   let h='<div class="card" style="cursor:default"><h2>'+esc(d.name)+'</h2><div class="sub">'+esc(d.region||'')+'</div>';
   if(d.note)h+='<div class="sub">'+esc(d.note)+'</div>';
-  h+=(d.phrases||[]).map(p=>{
+  h+=phrases.map(p=>{
    if(isCmp(p)){
     const rows=[['📜 ادبی',p.lit],['🇮🇷 ایرانی',p.ir],['🇦🇫 دری',p.da],['🇹🇯 تاجیکی',p.ta]]
      .filter(r=>r[1]).map(r=>'<div class="cmp-row"><span class="lbl">'+r[0]+'</span><span class="txt">'+esc(r[1])+'</span></div>').join('');
@@ -206,6 +265,9 @@ function renderDialects(c){
   }).join('');
   return h+'</div>';
  }).join('');
+ const dinp=document.getElementById('dl');
+ if(dinp){dinp.addEventListener('input',()=>renderDialects(c,dinp.value));
+ if(filter!==undefined){dinp.value=filter;dinp.focus();const dv=dinp.value;dinp.value='';dinp.value=dv;}}
 }
 fetch('content.json').then(r=>r.json()).then(d=>{
  DATA=d;
