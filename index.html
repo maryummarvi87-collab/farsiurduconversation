@@ -191,7 +191,7 @@ PRONUR['آن\u200Cها']='وہ سب';
 function renderVerbs(c,filter){
  const nf=norm((filter||'').trim());
  let items=DATA.verbs||[];
- if(nf)items=items.filter(v=>norm([v.fa,v.ur,v.past,v.pres,v.ro,v.deriv||''].join(' ')).includes(nf));
+ if(nf)items=items.filter(v=>norm([v.fa,v.ur,v.past,v.pres,v.ro,v.deriv||'',(v.derivs||[]).map(x=>x.fa+' '+(x.ur||'')).join(' ')].join(' ')).includes(nf));
  CURITEMS=[];
  c.innerHTML='<input class="dict-search" id="vs" placeholder="مصدر تلاش کریں… (فارسی یا اردو)">'+
   '<div class="hint">'+items.length+' مصادر — گردان دیکھنے کے لیے «گردان دیکھیں» دبائیں</div>'+
@@ -203,7 +203,7 @@ function renderVerbs(c,filter){
     (v.ro?'<div class="roman">'+esc(v.ro)+'</div>':'')+
     '<div>'+esc(v.ur)+'</div>'+
     '<span class="tag">بنِ ماضی: '+esc(v.past)+'</span> <span class="tag">بنِ مضارع: '+esc(v.pres)+'</span>'+
-    (v.deriv?'<div style="margin-top:8px;line-height:2"><b style="color:#0f5c46">مشتقات:</b> '+esc(v.deriv)+'</div>':'')+
+    ((v.derivs&&v.derivs.length)?'<div style="margin-top:8px"><b style="color:#0f5c46">مشتقات:</b>'+v.derivs.map(x=>'<div style="margin:3px 0;line-height:1.9"><span class="tag">'+esc(x.t||'')+'</span> <span style="font-size:19px">'+esc(x.v||x.fa)+'</span>'+(x.ro?' <span class="roman">'+esc(x.ro)+'</span>':'')+(x.ur?' — '+esc(x.ur):'')+'</div>').join('')+'</div>':(v.deriv?'<div style="margin-top:8px;line-height:2"><b style="color:#0f5c46">مشتقات:</b> '+esc(v.deriv)+'</div>':''))+
     '<details><summary>گردان دیکھیں</summary>'+groups+'</details></div>';
   }).join(''):'<div class="card">کوئی مصدر نہیں ملا۔</div>');
  const inp=document.getElementById('vs');
