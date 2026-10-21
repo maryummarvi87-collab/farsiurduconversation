@@ -188,16 +188,18 @@ function bindSectionSearch(key,filter){
 }
 const PRONUR={'من':'میں','تو':'تو / تم','او':'وہ','ما':'ہم','شما':'آپ / تم'};
 PRONUR['آن\u200Cها']='وہ سب';
+const TENSE_EN={'ماضی مطلق':'Simple Past','ماضی استمراری':'Past Continuous','ماضی نقلی استمراری':'Present Perfect Continuous','ماضی قریب':'Present Perfect','ماضی بعید':'Past Perfect','ماضی احتمالی':'Probable Past','مضارع التزامی':'Present Subjunctive','حال اخباری':'Simple Present','حال جاری':'Present Continuous','مستقبل':'Simple Future','امر':'Imperative','نہی':'Prohibitive (Negative Imperative)','ماضی سادہ':'Simple Past','مضارع سادہ':'Present Subjunctive'};
+const TENSES_HTML='<details style="margin-bottom:10px"><summary style="font-weight:700;color:#0f5c46;cursor:pointer">گردان کے زمانے — Tenses</summary><div style="line-height:2.1;padding:6px 2px">'+['ماضی مطلق','ماضی استمراری','ماضی نقلی استمراری','ماضی قریب','ماضی بعید','ماضی احتمالی','مضارع التزامی','حال اخباری','حال جاری','مستقبل','امر','نہی'].map(t=>'<div>'+esc(t)+' — <span class="roman">'+TENSE_EN[t]+'</span></div>').join('')+'</div></details>';
 function renderVerbs(c,filter){
  const nf=norm((filter||'').trim());
  let items=DATA.verbs||[];
  if(nf)items=items.filter(v=>norm([v.fa,v.ur,v.past,v.pres,v.ro,v.deriv||'',(v.derivs||[]).map(x=>x.fa+' '+(x.ur||'')).join(' ')].join(' ')).includes(nf));
  CURITEMS=[];
  c.innerHTML='<input class="dict-search" id="vs" placeholder="مصدر تلاش کریں… (فارسی یا اردو)">'+
-  '<div class="hint">'+items.length+' مصادر — گردان دیکھنے کے لیے «گردان دیکھیں» دبائیں</div>'+
+  '<div class="hint">'+items.length+' مصادر — گردان دیکھنے کے لیے «گردان دیکھیں» دبائیں</div>'+TENSES_HTML+
   (items.length?items.map(v=>{
    const groups=(v.groups||[]).map(g=>
-    '<div style="margin-top:10px"><b style="color:#0f5c46">'+esc(g.name)+'</b><table class="conj">'+
+    '<div style="margin-top:10px"><b style="color:#0f5c46">'+esc(g.name)+'</b>'+(TENSE_EN[g.name]?' <span class="roman">· '+TENSE_EN[g.name]+'</span>':'')+'<table class="conj">'+
     g.forms.map(fm=>'<tr><td class="pr">'+esc(fm.p)+' ('+esc(PRONUR[fm.p]||'')+')</td><td class="ff">'+esc(fm.fa)+'</td><td class="rr">'+esc(fm.ro)+'</td><td class="uu">'+esc(fm.u||'')+'</td></tr>').join('')+'</table></div>').join('');
    return '<div class="card" style="cursor:default"><h2>'+esc((v.v&&v.v.trim())?v.v:v.fa)+'</h2>'+
     (v.ro?'<div class="roman">'+esc(v.ro)+'</div>':'')+
