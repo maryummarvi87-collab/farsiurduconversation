@@ -1,0 +1,50 @@
+name: Build APK
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Unzip app source
+        run: unzip -q farsi_app_src.zip -d app_src
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.47.7'
+          channel: stable
+          cache: true
+
+      - name: Signing setup
+        env:
+          KEYSTORE_PASS: ${{ secrets.KEYSTORE_PASS }}
+        run: |
+          openssl enc -d -aes-256-cbc -pbkdf2 -in farsi-release.jks.enc -out app_src/farsi_urdu/android/app/farsi-release.jks -pass "pass:$KEYSTORE_PASS"
+          cat > app_src/farsi_urdu/android/key.properties <<PROP
+          storePassword=$KEYSTORE_PASS
+          keyPassword=$KEYSTORE_PASS
+          keyAlias=farsiurdu
+          storeFile=farsi-release.jks
+          PROP
+
+      - name: Build APK
+        working-directory: app_src/farsi_urdu
+        run: flutter pub get && flutter build apk --release
+
+      - name: Upload APK to Release v1.0
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cp app_src/farsi_urdu/build/app/outputs/flutter-apk/app-release.apk farsi_urdu_app.apk
+          gh release upload v1.0 farsi_urdu_app.apk --clobber --repo ${{ github.repository }}
