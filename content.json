@@ -1,5 +1,5 @@
 {
- "version": 173,
+ "version": 174,
  "updated": "2026-10-31",
  "lessons": [
   {
@@ -146129,162 +146129,463 @@
    "presRo": "āz",
    "groups": [
     {
-     "name": "ماضی — گذشتہ زمانہ",
+     "name": "ماضی مطلق",
      "forms": [
       {
        "p": "من",
        "fa": "آزیدم",
        "ro": "āzīdam",
-       "u": "نے تکلیف دیا، تکلیف دی",
-       "uRo": "ne takleef diya, takleef di"
+       "u": "نے تکلیف دی",
+       "uRo": "ne takleef di"
       },
       {
        "p": "تو",
        "fa": "آزیدی",
        "ro": "āzīdī",
-       "u": "نے تکلیف دیا، تکلیف دی",
-       "uRo": "ne takleef diya, takleef di"
+       "u": "نے تکلیف دی",
+       "uRo": "ne takleef di"
       },
       {
        "p": "او",
        "fa": "آزید",
        "ro": "āzīd",
-       "u": "نے تکلیف دیا، تکلیف دی",
-       "uRo": "ne takleef diya, takleef di"
+       "u": "نے تکلیف دی",
+       "uRo": "ne takleef di"
       },
       {
        "p": "ما",
        "fa": "آزیدیم",
        "ro": "āzīdīm",
-       "u": "نے تکلیف دیے، تکلیف دیں",
-       "uRo": "ne takleef diye, takleef den"
+       "u": "نے تکلیف دی",
+       "uRo": "ne takleef di"
       },
       {
        "p": "شما",
        "fa": "آزیدید",
        "ro": "āzīdīd",
-       "u": "نے تکلیف دیے، تکلیف دیں",
-       "uRo": "ne takleef diye, takleef den"
+       "u": "نے تکلیف دی",
+       "uRo": "ne takleef di"
       },
       {
        "p": "آن‌ها",
        "fa": "آزیدند",
        "ro": "āzīdand",
-       "u": "نے تکلیف دیے، تکلیف دیں",
-       "uRo": "ne takleef diye, takleef den"
+       "u": "نے تکلیف دی",
+       "uRo": "ne takleef di"
       }
      ]
     },
     {
-     "name": "حال — موجودہ زمانہ",
+     "name": "ماضی استمراری",
+     "forms": [
+      {
+       "p": "من",
+       "fa": "می‌آزیدم",
+       "ro": "mīāzīdam",
+       "u": "تکلیف دیتا تھا / دیتی تھی",
+       "uRo": "takleef deta tha / deti thi"
+      },
+      {
+       "p": "تو",
+       "fa": "می‌آزیدی",
+       "ro": "mīāzīdī",
+       "u": "تکلیف دیتے تھے / دیتی تھیں",
+       "uRo": "takleef dite the / deti theen"
+      },
+      {
+       "p": "او",
+       "fa": "می‌آزید",
+       "ro": "mīāzīd",
+       "u": "تکلیف دیتا تھا / دیتی تھی",
+       "uRo": "takleef deta tha / deti thi"
+      },
+      {
+       "p": "ما",
+       "fa": "می‌آزیدیم",
+       "ro": "mīāzīdīm",
+       "u": "تکلیف دیتے تھے / دیتی تھیں",
+       "uRo": "takleef dite the / deti theen"
+      },
+      {
+       "p": "شما",
+       "fa": "می‌آزیدید",
+       "ro": "mīāzīdīd",
+       "u": "تکلیف دیتے تھے / دیتی تھیں",
+       "uRo": "takleef dite the / deti theen"
+      },
+      {
+       "p": "آن‌ها",
+       "fa": "می‌آزیدند",
+       "ro": "mīāzīdand",
+       "u": "تکلیف دیتے تھے / دیتی تھیں",
+       "uRo": "takleef dite the / deti theen"
+      }
+     ]
+    },
+    {
+     "name": "ماضی قریب",
+     "forms": [
+      {
+       "p": "من",
+       "fa": "آزیده‌ام",
+       "ro": "āzīde-am",
+       "u": "نے تکلیف دی ہے",
+       "uRo": "ne takleef di hai"
+      },
+      {
+       "p": "تو",
+       "fa": "آزیده‌ای",
+       "ro": "āzīde-ī",
+       "u": "نے تکلیف دی ہے",
+       "uRo": "ne takleef di hai"
+      },
+      {
+       "p": "او",
+       "fa": "آزیده است",
+       "ro": "āzīde ast",
+       "u": "نے تکلیف دی ہے",
+       "uRo": "ne takleef di hai"
+      },
+      {
+       "p": "ما",
+       "fa": "آزیده‌ایم",
+       "ro": "āzīde-īm",
+       "u": "نے تکلیف دی ہے",
+       "uRo": "ne takleef di hai"
+      },
+      {
+       "p": "شما",
+       "fa": "آزیده‌اید",
+       "ro": "āzīde-īd",
+       "u": "نے تکلیف دی ہے",
+       "uRo": "ne takleef di hai"
+      },
+      {
+       "p": "آن‌ها",
+       "fa": "آزیده‌اند",
+       "ro": "āzīde-and",
+       "u": "نے تکلیف دی ہے",
+       "uRo": "ne takleef di hai"
+      }
+     ]
+    },
+    {
+     "name": "ماضی بعید",
+     "forms": [
+      {
+       "p": "من",
+       "fa": "آزیده بودم",
+       "ro": "āzīde būdam",
+       "u": "نے تکلیف دی تھی",
+       "uRo": "ne takleef di thi"
+      },
+      {
+       "p": "تو",
+       "fa": "آزیده بودی",
+       "ro": "āzīde būdī",
+       "u": "نے تکلیف دی تھی",
+       "uRo": "ne takleef di thi"
+      },
+      {
+       "p": "او",
+       "fa": "آزیده بود",
+       "ro": "āzīde būd",
+       "u": "نے تکلیف دی تھی",
+       "uRo": "ne takleef di thi"
+      },
+      {
+       "p": "ما",
+       "fa": "آزیده بودیم",
+       "ro": "āzīde būdīm",
+       "u": "نے تکلیف دی تھی",
+       "uRo": "ne takleef di thi"
+      },
+      {
+       "p": "شما",
+       "fa": "آزیده بودید",
+       "ro": "āzīde būdīd",
+       "u": "نے تکلیف دی تھی",
+       "uRo": "ne takleef di thi"
+      },
+      {
+       "p": "آن‌ها",
+       "fa": "آزیده بودند",
+       "ro": "āzīde būdand",
+       "u": "نے تکلیف دی تھی",
+       "uRo": "ne takleef di thi"
+      }
+     ]
+    },
+    {
+     "name": "ماضی احتمالی",
+     "forms": [
+      {
+       "p": "من",
+       "fa": "آزیده باشم",
+       "ro": "āzīde bāsham",
+       "u": "شاید نے تکلیف دی ہو",
+       "uRo": "shaayad ne takleef di ho"
+      },
+      {
+       "p": "تو",
+       "fa": "آزیده باشی",
+       "ro": "āzīde bāshī",
+       "u": "شاید نے تکلیف دی ہو",
+       "uRo": "shaayad ne takleef di ho"
+      },
+      {
+       "p": "او",
+       "fa": "آزیده باشد",
+       "ro": "āzīde bāshad",
+       "u": "شاید نے تکلیف دی ہو",
+       "uRo": "shaayad ne takleef di ho"
+      },
+      {
+       "p": "ما",
+       "fa": "آزیده باشیم",
+       "ro": "āzīde bāshīm",
+       "u": "شاید نے تکلیف دی ہو",
+       "uRo": "shaayad ne takleef di ho"
+      },
+      {
+       "p": "شما",
+       "fa": "آزیده باشید",
+       "ro": "āzīde bāshīd",
+       "u": "شاید نے تکلیف دی ہو",
+       "uRo": "shaayad ne takleef di ho"
+      },
+      {
+       "p": "آن‌ها",
+       "fa": "آزیده باشند",
+       "ro": "āzīde bāshand",
+       "u": "شاید نے تکلیف دی ہو",
+       "uRo": "shaayad ne takleef di ho"
+      }
+     ]
+    },
+    {
+     "name": "مضارع التزامی",
+     "forms": [
+      {
+       "p": "من",
+       "fa": "بیازم",
+       "ro": "biyāzam",
+       "u": "تکلیف دوں",
+       "uRo": "takleef doon"
+      },
+      {
+       "p": "تو",
+       "fa": "بیازی",
+       "ro": "biyāzī",
+       "u": "تکلیف دو",
+       "uRo": "takleef do"
+      },
+      {
+       "p": "او",
+       "fa": "بیازد",
+       "ro": "biyāzad",
+       "u": "تکلیف دے",
+       "uRo": "takleef de"
+      },
+      {
+       "p": "ما",
+       "fa": "بیازیم",
+       "ro": "biyāzīm",
+       "u": "تکلیف دیں",
+       "uRo": "takleef den"
+      },
+      {
+       "p": "شما",
+       "fa": "بیازید",
+       "ro": "biyāzīd",
+       "u": "تکلیف دیں",
+       "uRo": "takleef den"
+      },
+      {
+       "p": "آن‌ها",
+       "fa": "بیازند",
+       "ro": "biyāzand",
+       "u": "تکلیف دیں",
+       "uRo": "takleef den"
+      }
+     ]
+    },
+    {
+     "name": "حال اخباری",
      "forms": [
       {
        "p": "من",
        "fa": "می‌آزم",
        "ro": "mīāzam",
-       "u": "تکلیف دیتا ہوں، تکلیف دیتی ہوں",
-       "uRo": "takleef deta hoon, takleef deti hoon"
+       "u": "تکلیف دیتا ہوں / دیتی ہوں",
+       "uRo": "takleef deta hoon / deti hoon"
       },
       {
        "p": "تو",
        "fa": "می‌آزی",
        "ro": "mīāzī",
-       "u": "تکلیف دیتا ہے، تکلیف دیتی ہے",
-       "uRo": "takleef deta hai, takleef deti hai"
+       "u": "تکلیف دیتے ہو / دیتی ہو",
+       "uRo": "takleef dite ho / deti ho"
       },
       {
        "p": "او",
        "fa": "می‌آزد",
        "ro": "mīāzad",
-       "u": "تکلیف دیتا ہے، تکلیف دیتی ہے",
-       "uRo": "takleef deta hai, takleef deti hai"
+       "u": "تکلیف دیتا ہے / دیتی ہے",
+       "uRo": "takleef deta hai / deti hai"
       },
       {
        "p": "ما",
        "fa": "می‌آزیم",
        "ro": "mīāzīm",
-       "u": "تکلیف دیتے ہیں، تکلیف دیتی ہیں",
-       "uRo": "takleef dite hain, takleef deti hain"
+       "u": "تکلیف دیتے ہیں / دیتی ہیں",
+       "uRo": "takleef dite hain / deti hain"
       },
       {
        "p": "شما",
        "fa": "می‌آزید",
        "ro": "mīāzīd",
-       "u": "تکلیف دیتے ہیں، تکلیف دیتی ہیں",
-       "uRo": "takleef dite hain, takleef deti hain"
+       "u": "تکلیف دیتے ہیں / دیتی ہیں",
+       "uRo": "takleef dite hain / deti hain"
       },
       {
        "p": "آن‌ها",
        "fa": "می‌آزند",
        "ro": "mīāzand",
-       "u": "تکلیف دیتے ہیں، تکلیف دیتی ہیں",
-       "uRo": "takleef dite hain, takleef deti hain"
+       "u": "تکلیف دیتے ہیں / دیتی ہیں",
+       "uRo": "takleef dite hain / deti hain"
       }
      ]
     },
     {
-     "name": "مستقبل — آنے والا زمانہ",
+     "name": "حال جاری",
+     "forms": [
+      {
+       "p": "من",
+       "fa": "دارم می‌آزم",
+       "ro": "dāram mīāzam",
+       "u": "تکلیف دے رہا ہوں / رہی ہوں",
+       "uRo": "takleef de raha hoon / rahi hoon"
+      },
+      {
+       "p": "تو",
+       "fa": "داری می‌آزی",
+       "ro": "dārī mīāzī",
+       "u": "تکلیف دے رہے ہو / رہی ہو",
+       "uRo": "takleef de rahe ho / rahi ho"
+      },
+      {
+       "p": "او",
+       "fa": "دارد می‌آزد",
+       "ro": "dārad mīāzad",
+       "u": "تکلیف دے رہا ہے / رہی ہے",
+       "uRo": "takleef de raha hai / rahi hai"
+      },
+      {
+       "p": "ما",
+       "fa": "داریم می‌آزیم",
+       "ro": "dārīm mīāzīm",
+       "u": "تکلیف دے رہے ہیں / رہی ہیں",
+       "uRo": "takleef de rahe hain / rahi hain"
+      },
+      {
+       "p": "شما",
+       "fa": "دارید می‌آزید",
+       "ro": "dārīd mīāzīd",
+       "u": "تکلیف دے رہے ہیں / رہی ہیں",
+       "uRo": "takleef de rahe hain / rahi hain"
+      },
+      {
+       "p": "آن‌ها",
+       "fa": "دارند می‌آزند",
+       "ro": "dārand mīāzand",
+       "u": "تکلیف دے رہے ہیں / رہی ہیں",
+       "uRo": "takleef de rahe hain / rahi hain"
+      }
+     ]
+    },
+    {
+     "name": "مستقبل",
      "forms": [
       {
        "p": "من",
        "fa": "خواهم آزید",
        "ro": "khāham āzīd",
-       "u": "تکلیف دوں گا، تکلیف دوں گی",
-       "uRo": "takleef doon ga, takleef doon gi"
+       "u": "تکلیف دوں گا / گی",
+       "uRo": "takleef doon ga / gi"
       },
       {
        "p": "تو",
        "fa": "خواهی آزید",
        "ro": "khāhī āzīd",
-       "u": "تکلیف دے گا، تکلیف دے گی",
-       "uRo": "takleef de ga, takleef de gi"
+       "u": "تکلیف دو گے / گی",
+       "uRo": "takleef do ge / gi"
       },
       {
        "p": "او",
        "fa": "خواهد آزید",
        "ro": "khāhad āzīd",
-       "u": "تکلیف دے گا، تکلیف دے گی",
-       "uRo": "takleef de ga, takleef de gi"
+       "u": "تکلیف دے گا / گی",
+       "uRo": "takleef de ga / gi"
       },
       {
        "p": "ما",
        "fa": "خواهیم آزید",
        "ro": "khāhīm āzīd",
-       "u": "تکلیف دیں گے، تکلیف دیں گی",
-       "uRo": "takleef den ge, takleef den gi"
+       "u": "تکلیف دیں گے / گی",
+       "uRo": "takleef den ge / gi"
       },
       {
        "p": "شما",
        "fa": "خواهید آزید",
        "ro": "khāhīd āzīd",
-       "u": "تکلیف دیں گے، تکلیف دیں گی",
-       "uRo": "takleef den ge, takleef den gi"
+       "u": "تکلیف دیں گے / گی",
+       "uRo": "takleef den ge / gi"
       },
       {
        "p": "آن‌ها",
        "fa": "خواهند آزید",
        "ro": "khāhand āzīd",
-       "u": "تکلیف دیں گے، تکلیف دیں گی",
-       "uRo": "takleef den ge, takleef den gi"
+       "u": "تکلیف دیں گے / گی",
+       "uRo": "takleef den ge / gi"
       }
      ]
     },
     {
-     "name": "امر — حکم",
+     "name": "امر",
      "forms": [
       {
        "p": "تو",
-       "fa": "بآز",
-       "ro": "beāz",
-       "u": "تکلیف دے",
-       "uRo": "takleef de"
+       "fa": "بیاز",
+       "ro": "biyāz",
+       "u": "تکلیف دو",
+       "uRo": "takleef do"
       },
       {
        "p": "شما",
-       "fa": "بآزید",
-       "ro": "beāzīd",
+       "fa": "بیازید",
+       "ro": "biyāzīd",
        "u": "تکلیف دیں",
        "uRo": "takleef den"
+      }
+     ]
+    },
+    {
+     "name": "نہی",
+     "forms": [
+      {
+       "p": "تو",
+       "fa": "میاز",
+       "ro": "mayāz",
+       "u": "تکلیف مت دو",
+       "uRo": "takleef mat do"
+      },
+      {
+       "p": "شما",
+       "fa": "میازید",
+       "ro": "mayāzīd",
+       "u": "تکلیف مت دیں",
+       "uRo": "takleef mat den"
       }
      ]
     }
