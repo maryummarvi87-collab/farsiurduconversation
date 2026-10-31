@@ -1,5 +1,5 @@
 {
- "version": 100,
+ "version": 101,
  "updated": "2026-10-31",
  "lessons": [
   {
@@ -48422,6 +48422,204 @@
    "v": "تقارب",
    "en": "Convergence",
    "urRo": "1) qarbat, nazdeki, ham gari (zid: doori, tabaad 2) nazdek aana 3) aqtarab 4) takarao, mulaaqaat)"
+  },
+  {
+   "fa": "نوشت‌افزار",
+   "v": "نِوِشْت‌افْزار",
+   "ur": "سامانِ تحریر، لکھنے کا سامان",
+   "pos": "اسم",
+   "ro": "nevesht-afzâr",
+   "en": "stationery",
+   "urRo": "saaman-e tehreer, likhne ka saaman"
+  },
+  {
+   "fa": "خودکار",
+   "v": "خُودکار",
+   "ur": "بال پوائنٹ",
+   "pos": "اسم",
+   "ro": "khodkâr",
+   "en": "ballpoint pen",
+   "urRo": "ball point"
+  },
+  {
+   "fa": "خودنویس",
+   "v": "خُودنِویس",
+   "ur": "فاؤنٹین پین، سیاہی والا پین",
+   "pos": "اسم",
+   "ro": "khodnevis",
+   "en": "fountain pen",
+   "urRo": "fountain pen, siyahi wala pen"
+  },
+  {
+   "fa": "غلط‌گیر",
+   "v": "غَلَط‌گیر",
+   "ur": "غلطی مٹانے والا، کریکشن پین",
+   "pos": "اسم",
+   "ro": "ghalatgir",
+   "en": "correction pen",
+   "urRo": "ghalti mitane wala, correction pen"
+  },
+  {
+   "fa": "دفتر",
+   "v": "دَفْتَر",
+   "ur": "کاپی، رجسٹر",
+   "pos": "اسم",
+   "ro": "daftar",
+   "en": "notebook, register",
+   "urRo": "copy, register"
+  },
+  {
+   "fa": "مقوا",
+   "v": "مُقَوّا",
+   "ur": "گتا، موٹا کاغذ",
+   "pos": "اسم",
+   "ro": "moqavvâ",
+   "en": "cardboard",
+   "urRo": "gatta, mota kaghaz"
+  },
+  {
+   "fa": "پاک‌کن",
+   "v": "پاک‌کُن",
+   "ur": "ربڑ، ایریزر",
+   "pos": "اسم",
+   "ro": "pâk-kon",
+   "en": "eraser",
+   "urRo": "rabar, eraser"
+  },
+  {
+   "fa": "مداد‌تراش",
+   "v": "مِداد‌تَراش",
+   "ur": "شاپنر، پنسل تراشنے والا آلہ",
+   "pos": "اسم",
+   "ro": "medâd-tarâsh",
+   "en": "pencil sharpener",
+   "urRo": "sharpener, pencil tarashne wala aala"
+  },
+  {
+   "fa": "مداد رنگی",
+   "v": "مِدادِ رَنگی",
+   "ur": "رنگوں والی پنسلیں",
+   "pos": "اسم",
+   "ro": "medâd-e rangi",
+   "en": "coloured pencils",
+   "urRo": "rangon wali pencilain"
+  },
+  {
+   "fa": "جامدادی",
+   "v": "جامِدادی",
+   "ur": "جیومیٹری باکس، پنسلیں رکھنے کا صندوقچہ",
+   "pos": "اسم",
+   "ro": "jâmedâdi",
+   "en": "pencil case, geometry box",
+   "urRo": "geometry box, pencilain rakhne ka sandooqcha"
+  },
+  {
+   "fa": "خط‌کش",
+   "v": "خَط‌کَش",
+   "ur": "پیمانہ، فٹ",
+   "pos": "اسم",
+   "ro": "khatkesh",
+   "en": "ruler",
+   "urRo": "paimana, scale"
+  },
+  {
+   "fa": "زیردستی",
+   "v": "زیردَستی",
+   "ur": "لکھنے کے لیے نیچے رکھا جانے والا گدا یا گتا",
+   "pos": "اسم",
+   "ro": "zirdasti",
+   "en": "writing pad, desk pad",
+   "urRo": "likhne ke liye neeche rakha jane wala gadda ya gatta"
+  },
+  {
+   "fa": "منگنه",
+   "v": "مَنگَنه",
+   "ur": "سٹیپلر",
+   "pos": "اسم",
+   "ro": "mangane",
+   "en": "stapler",
+   "urRo": "stapler"
+  },
+  {
+   "fa": "پرگار",
+   "v": "پَرگار",
+   "ur": "پرکار، کمپاس",
+   "pos": "اسم",
+   "ro": "pargâr",
+   "en": "compass (drawing)",
+   "urRo": "parkaar, compass"
+  },
+  {
+   "fa": "پاکت‌نامه",
+   "v": "پاکَت‌نامه",
+   "ur": "خط رکھنے کا لفافہ",
+   "pos": "اسم",
+   "ro": "pâkat-nâme",
+   "en": "envelope",
+   "urRo": "khat rakhne ka lifafa"
+  },
+  {
+   "fa": "تقویم",
+   "v": "تَقْویم",
+   "ur": "جنتری، کیلنڈر",
+   "pos": "اسم",
+   "ro": "taqvīm",
+   "en": "calendar",
+   "urRo": "jantri, calendar"
+  },
+  {
+   "fa": "چراغ مطالعه",
+   "v": "چِراغِ مُطالِعِه",
+   "ur": "پڑھنے کا لیمپ، سٹڈی لائٹ",
+   "pos": "اسم",
+   "ro": "cherâgh-e motâle'e",
+   "en": "study lamp, reading lamp",
+   "urRo": "parhne ka lamp, study light"
+  },
+  {
+   "fa": "نقاشی کشیدن",
+   "v": "نَقّاشی کِشیدَن",
+   "ur": "تصویر بنانا، مصوری کرنا",
+   "pos": "فعل",
+   "ro": "naqqâshi keshidan",
+   "en": "to draw, to paint",
+   "urRo": "tasveer banana, musawwari karna"
+  },
+  {
+   "fa": "گذاشتن",
+   "v": "گُذاشتَن",
+   "ur": "رکھنا، ڈالنا",
+   "pos": "فعل",
+   "ro": "gozâshtan",
+   "en": "to put, to place",
+   "urRo": "rakhna, daalna"
+  },
+  {
+   "fa": "طلبه",
+   "v": "طَلَبِه",
+   "ur": "طالب علم",
+   "pos": "اسم",
+   "ro": "talabe",
+   "en": "student",
+   "urRo": "taalib ilm"
+  },
+  {
+   "fa": "الآن",
+   "v": "اَلْآن",
+   "ur": "اب، ابھی",
+   "pos": "قید",
+   "ro": "al'ân",
+   "en": "now",
+   "urRo": "ab, abhi"
+  },
+  {
+   "fa": "وجود داشتن",
+   "v": "وُجود داشتَن",
+   "ur": "موجود ہونا",
+   "pos": "فعل",
+   "ro": "vojud dâshtan",
+   "en": "to exist",
+   "urRo": "maujood hona"
   }
  ],
  "dialects": [
