@@ -1,5 +1,5 @@
 {
- "version": 183,
+ "version": 184,
  "updated": "2026-11-01",
  "lessons": [
   {
@@ -120717,6 +120717,888 @@
    "ro": "kūler otāq rā khonak mīkonad.",
    "ur": "کولر کمرے کو ٹھنڈا کرتا ہے۔",
    "urRo": "cooler kamre ko thanda karta hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "The architect builds a house.",
+   "fa": "معمار خانه‌ای می‌سازد.",
+   "ro": "meʿmār khāne-ī mīsāzad.",
+   "ur": "معمار گھر بناتا ہے۔",
+   "urRo": "me'maar ghar banata hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "The sculptor makes a statue.",
+   "fa": "مجسمه‌ساز مجسمه‌ای می‌سازد.",
+   "ro": "mojasame-sāz mojasame-ī mīsāzad.",
+   "ur": "مجسمہ ساز مجسمہ بناتا ہے۔",
+   "urRo": "mujasma saaz mujasma banata hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "The designer makes a new design.",
+   "fa": "طراح طرح تازه‌ای می‌سازد.",
+   "ro": "tarrāh tarh-e tāze-ī mīsāzad.",
+   "ur": "ڈیزائنر نیا ڈیزائن بناتا ہے۔",
+   "urRo": "designer naya design banata hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "The accountant counts money.",
+   "fa": "حسابدار پول را می‌شمارد.",
+   "ro": "hesābdār pūl rā mīshomārad.",
+   "ur": "حسابدار پیسے گنتا ہے۔",
+   "urRo": "hisaabdaar paisay ginta hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "The mule carries a heavy load.",
+   "fa": "قاطر بار سنگینی می‌برد.",
+   "ro": "qāter bār-e sangīnī mībarad.",
+   "ur": "خچر بھاری بوجھ اٹھاتا ہے۔",
+   "urRo": "khachchar bhaari bojh uthata hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "The hare runs in the field.",
+   "fa": "خرگوش در کشتزار می‌دود.",
+   "ro": "khargūsh dar keshtzār mīdavad.",
+   "ur": "خرگوش کھیت میں دوڑتا ہے۔",
+   "urRo": "khargosh khait mein daudta hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "The ape is in the tree.",
+   "fa": "میمون روی درخت است.",
+   "ro": "meymūn rū-ye derakht ast.",
+   "ur": "بندر درخت پر ہے۔",
+   "urRo": "bandar darakht par hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "The ox is in the field.",
+   "fa": "گاو نر در کشتزار است.",
+   "ro": "gāv-e nar dar keshtzār ast.",
+   "ur": "بیل کھیت میں ہے۔",
+   "urRo": "bail khait mein hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "The intestine is a part of the body.",
+   "fa": "روده بخشی از بدن است.",
+   "ro": "rūde bakhshī az badan ast.",
+   "ur": "آنت بدن کا ایک حصہ ہے۔",
+   "urRo": "aant badan ka ek hissa hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "The bladder is a part of the body.",
+   "fa": "مثانه بخشی از بدن است.",
+   "ro": "masāne bakhshī az badan ast.",
+   "ur": "مثانہ بدن کا ایک حصہ ہے۔",
+   "urRo": "masaana badan ka ek hissa hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "My belly aches.",
+   "fa": "شکمم درد می‌کند.",
+   "ro": "shekamam dard mīkonad.",
+   "ur": "میرے پیٹ میں درد ہے۔",
+   "urRo": "mere pait mein dard hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "Bamboo is tall.",
+   "fa": "بامبو بلند است.",
+   "ro": "bāmbū boland ast.",
+   "ur": "بانس لمبا ہوتا ہے۔",
+   "urRo": "baans lamba hota hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "This cardboard is strong.",
+   "fa": "این مقوا محکم است.",
+   "ro": "īn moqavvā mohkam ast.",
+   "ur": "یہ گتّا مضبوط ہے۔",
+   "urRo": "yeh gatta mazboot hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "Aluminium is light.",
+   "fa": "آلومینیوم سبک است.",
+   "ro": "ālūmīniyom sabok ast.",
+   "ur": "المونیم ہلکی ہوتی ہے۔",
+   "urRo": "aluminium halki hoti hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "Zinc is a metal.",
+   "fa": "روی یک فلز است.",
+   "ro": "rūy yek felez ast.",
+   "ur": "جست ایک دھات ہے۔",
+   "urRo": "jist ek dhaat hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "Tin is used in cans.",
+   "fa": "قلع در قوطی‌ها به کار می‌رود.",
+   "ro": "qalʿ dar qūtī-hā be kār mīravad.",
+   "ur": "ٹین ڈبوں میں استعمال ہوتا ہے۔",
+   "urRo": "tin dabbon mein istemal hota hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "The old man walks with the help of a cane.",
+   "fa": "پیرمرد با کمک عصا راه می‌رود.",
+   "ro": "pīrmard bā komak-e asā rāh mīravad.",
+   "ur": "بوڑھا آدمی چھڑی کے سہارے چلتا ہے۔",
+   "urRo": "boodha aadmi chhadi ke sahaare chalta hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "The fireplace burns in winter.",
+   "fa": "شومینه در زمستان می‌سوزد.",
+   "ro": "shomīne dar zemestān mīsūzad.",
+   "ur": "انگیٹھی سردیوں میں جلتی ہے۔",
+   "urRo": "angeethi sardiyon mein jalti hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "Flowers are grown in the greenhouse.",
+   "fa": "در گلخانه گل پرورش داده می‌شود.",
+   "ro": "dar golkhāne gol parvaresh dāde mīshavad.",
+   "ur": "گرین ہاؤس میں پھول اگائے جاتے ہیں۔",
+   "urRo": "greenhouse mein phool ugaaye jaate hain.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "The lorry carries a heavy load.",
+   "fa": "کامیون بار سنگینی می‌برد.",
+   "ro": "kāmiyon bār-e sangīnī mībarad.",
+   "ur": "ٹرک بھاری بوجھ لے جاتا ہے۔",
+   "urRo": "truck bhaari bojh le jaata hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "Speak near the microphone.",
+   "fa": "نزدیک میکروفون صحبت کنید.",
+   "ro": "nazdīk-e mīkrofon sohbat konīd.",
+   "ur": "مائیکروفون کے قریب بات کریں۔",
+   "urRo": "microphone ke qareeb baat karen.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "Put the headphones in your ears.",
+   "fa": "هدفون را در گوش‌هایتان بگذارید.",
+   "ro": "hedfon rā dar gūsh-hāyetān begozārīd.",
+   "ur": "ہیڈ فون اپنے کانوں میں لگائیں۔",
+   "urRo": "headphone apne kaanon mein lagaen.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "The scanner scans the paper.",
+   "fa": "اسکنر کاغذ را اسکن می‌کند.",
+   "ro": "eskaner kāghaz rā eskan mīkonad.",
+   "ur": "اسکینر کاغذ کو اسکین کرتا ہے۔",
+   "urRo": "scanner kaaghaz ko scan karta hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "This melody is sweet.",
+   "fa": "این نغمه دلنشین است.",
+   "ro": "īn naghme delneshīn ast.",
+   "ur": "یہ دھن سریلی ہے۔",
+   "urRo": "yeh dhun sureeli hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "The rhythm of the song is good.",
+   "fa": "ریتم آهنگ خوب است.",
+   "ro": "rītm-e āhang khūb ast.",
+   "ur": "گانے کی تال اچھی ہے۔",
+   "urRo": "gaanay ki taal achhi hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "He plays the harmonium.",
+   "fa": "او هارمونیوم می‌نوازد.",
+   "ro": "ū hārmūniyom mīnāvāzad.",
+   "ur": "وہ ہارمونیم بجاتا ہے۔",
+   "urRo": "woh harmonium bajata hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "He plays the tabla.",
+   "fa": "او طبلا می‌نوازد.",
+   "ro": "ū tablā mīnāvāzad.",
+   "ur": "وہ طبلہ بجاتا ہے۔",
+   "urRo": "woh tabla bajata hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "This drama is long.",
+   "fa": "این نمایش طولانی است.",
+   "ro": "īn namāyesh tūlānī ast.",
+   "ur": "یہ ڈرامہ لمبا ہے۔",
+   "urRo": "yeh drama lamba hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "Poetry is my favourite.",
+   "fa": "شعر مورد علاقه من است.",
+   "ro": "sheʿr mored-e alāqe-ye man ast.",
+   "ur": "شاعری میری پسندیدہ ہے۔",
+   "urRo": "shayari meri pasandeeda hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "Economics is a science.",
+   "fa": "اقتصاد یک علم است.",
+   "ro": "eqtesād yek elm ast.",
+   "ur": "معاشیات ایک علم ہے۔",
+   "urRo": "muashiyaat ek ilm hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "He does politics.",
+   "fa": "او سیاست می‌کند.",
+   "ro": "ū siyāsat mīkonad.",
+   "ur": "وہ سیاست کرتا ہے۔",
+   "urRo": "woh siyasat karta hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "Philosophy is a deep science.",
+   "fa": "فلسفه علمی عمیق است.",
+   "ro": "falsafe elmī amīq ast.",
+   "ur": "فلسفہ گہرا علم ہے۔",
+   "urRo": "falsafa gehra ilm hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "Psychology is the science of the mind.",
+   "fa": "روان‌شناسی علم ذهن است.",
+   "ro": "ravānshenāsī elm-e zehn ast.",
+   "ur": "نفسیات ذہن کا علم ہے۔",
+   "urRo": "nafsiyaat zehen ka ilm hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "He reads literature.",
+   "fa": "او ادبیات می‌خواند.",
+   "ro": "ū adabiyāt mīkhānad.",
+   "ur": "وہ ادب پڑھتا ہے۔",
+   "urRo": "woh adab padhta hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "The embroidery is beautiful.",
+   "fa": "گلدوزی زیباست.",
+   "ro": "goldūzī zībāst.",
+   "ur": "کڑھائی خوبصورت ہے۔",
+   "urRo": "kadhaai khoobsurat hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "The banquet is large.",
+   "fa": "ضیافت بزرگ است.",
+   "ro": "ziyāfat bozorg ast.",
+   "ur": "دعوت بڑی ہے۔",
+   "urRo": "dawat badi hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "Today is my birthday.",
+   "fa": "امروز تولد من است.",
+   "ro": "emrūz tavalod-e man ast.",
+   "ur": "آج میری سالگرہ ہے۔",
+   "urRo": "aaj meri saalgirah hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "The ceremony is today.",
+   "fa": "مراسم امروز است.",
+   "ro": "marāsem emrūz ast.",
+   "ur": "تقریب آج ہے۔",
+   "urRo": "taqreeb aaj hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "This cauliflower is fresh.",
+   "fa": "این گل‌کلم تازه است.",
+   "ro": "īn gol-kalam tāze ast.",
+   "ur": "یہ پھول گوبھی تازہ ہے۔",
+   "urRo": "yeh phool gobhi taaza hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "Basil has a good smell.",
+   "fa": "ریحان بوی خوبی دارد.",
+   "ro": "reyhān bū-ye khūbī dārad.",
+   "ur": "تلسی کی خوشبو اچھی ہوتی ہے۔",
+   "urRo": "tulsi ki khushbu achhi hoti hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "Parsley is added to food.",
+   "fa": "جعفری به غذا اضافه می‌شود.",
+   "ro": "jaʿfarī be ghazā ezāfe mīshavad.",
+   "ur": "اجمود کھانے میں ملایا جاتا ہے۔",
+   "urRo": "ajmood khaanay mein milaya jaata hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "His ugliness is obvious.",
+   "fa": "زشتی او آشکار است.",
+   "ro": "zeshtī-ye ū āshekār ast.",
+   "ur": "اس کی بدصورتی ظاہر ہے۔",
+   "urRo": "us ki badsoorti zaahir hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "Goodness always benefits.",
+   "fa": "نیکی همیشه سود دارد.",
+   "ro": "nīkī hamīshe sūd dārad.",
+   "ur": "نیکی ہمیشہ فائدہ دیتی ہے۔",
+   "urRo": "naiki hamesha faida deti hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "Wickedness always harms.",
+   "fa": "بدی همیشه زیان می‌رساند.",
+   "ro": "badī hamīshe ziyān mīresānad.",
+   "ur": "برائی ہمیشہ نقصان پہنچاتی ہے۔",
+   "urRo": "burai hamesha nuqsan pohanchati hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "Bravery is a great blessing.",
+   "fa": "شجاعت نعمت بزرگی است.",
+   "ro": "shojāʿat neʿmat-e bozorgī ast.",
+   "ur": "بہادری بڑی نعمت ہے۔",
+   "urRo": "bahaduri badi naimat hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "Cowardice is bad.",
+   "fa": "بزدلی بد است.",
+   "ro": "bozdolī bad ast.",
+   "ur": "بزدلی بری ہے۔",
+   "urRo": "buzdili buri hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "Folly causes harm.",
+   "fa": "نادانی زیان می‌آورد.",
+   "ro": "nādānī ziyān mīāvarad.",
+   "ur": "نادانی نقصان کا سبب بنتی ہے۔",
+   "urRo": "naadaani nuqsan ka sabab banti hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "Imagination is wide.",
+   "fa": "تخیل گسترده است.",
+   "ro": "takhayol gostarde ast.",
+   "ur": "تخیل وسیع ہے۔",
+   "urRo": "takhayyul wasee hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "Grief is deep.",
+   "fa": "اندوه عمیق است.",
+   "ro": "andūh amīq ast.",
+   "ur": "غم گہرا ہے۔",
+   "urRo": "gham gehra hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "Give him comfort.",
+   "fa": "به او تسلی بدهید.",
+   "ro": "be ū tasallī bedahīd.",
+   "ur": "اسے تسلی دیں۔",
+   "urRo": "use tasalli den.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "Relief came after the pain.",
+   "fa": "پس از درد آسودگی آمد.",
+   "ro": "pas az dard āsūdegī āmad.",
+   "ur": "درد کے بعد آرام آیا۔",
+   "urRo": "dard ke baad aaram aaya.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "The risk is great.",
+   "fa": "خطر بزرگ است.",
+   "ro": "khatar bozorg ast.",
+   "ur": "خطرہ بڑا ہے۔",
+   "urRo": "khatra bada hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "This benefit is great.",
+   "fa": "این سود بزرگ است.",
+   "ro": "īn sūd bozorg ast.",
+   "ur": "یہ فائدہ بڑا ہے۔",
+   "urRo": "yeh faida bada hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "Do not cause harm.",
+   "fa": "زیان نرسانید.",
+   "ro": "ziyān naresānīd.",
+   "ur": "نقصان نہ پہنچائیں۔",
+   "urRo": "nuqsan na pohanchaen.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "His glory is famous.",
+   "fa": "شکوه او مشهور است.",
+   "ro": "shokūh-e ū mashhūr ast.",
+   "ur": "اس کی عظمت مشہور ہے۔",
+   "urRo": "us ki azmat mashhoor hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "His fate changed.",
+   "fa": "سرنوشت او تغییر کرد.",
+   "ro": "sarnevesht-e ū taghyīr kard.",
+   "ur": "اس کی قسمت بدل گئی۔",
+   "urRo": "us ki qismat badal gayi.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "Falsehood is bad.",
+   "fa": "دروغ بد است.",
+   "ro": "dorūgh bad ast.",
+   "ur": "جھوٹ برا ہے۔",
+   "urRo": "jhoot bura hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "This mystery is deep.",
+   "fa": "این راز عمیق است.",
+   "ro": "īn rāz amīq ast.",
+   "ur": "یہ راز گہرا ہے۔",
+   "urRo": "yeh raaz gehra hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "This miracle is great.",
+   "fa": "این معجزه بزرگ است.",
+   "ro": "īn moʿjeze bozorg ast.",
+   "ur": "یہ معجزہ بڑا ہے۔",
+   "urRo": "yeh mojza bada hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "Magic is bad.",
+   "fa": "جادو بد است.",
+   "ro": "jādū bad ast.",
+   "ur": "جادو برا ہے۔",
+   "urRo": "jaadu bura hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "He is envious.",
+   "fa": "او حسود است.",
+   "ro": "ū hasūd ast.",
+   "ur": "وہ حسد کرنے والا ہے۔",
+   "urRo": "woh hasad karne wala hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "He is thankful.",
+   "fa": "او سپاسگزار است.",
+   "ro": "ū sepāsgozār ast.",
+   "ur": "وہ شکر گزار ہے۔",
+   "urRo": "woh shukar guzaar hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "He is hopeless.",
+   "fa": "او ناامید است.",
+   "ro": "ū nāomīd ast.",
+   "ur": "وہ ناامید ہے۔",
+   "urRo": "woh na-umeed hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "He is anxious.",
+   "fa": "او بی‌قرار است.",
+   "ro": "ū bīqarār ast.",
+   "ur": "وہ بے چین ہے۔",
+   "urRo": "woh bechain hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "He is peaceful.",
+   "fa": "او آرام است.",
+   "ro": "ū ārām ast.",
+   "ur": "وہ پر سکون ہے۔",
+   "urRo": "woh pur sukoon hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "He is furious.",
+   "fa": "او بسیار خشمگین است.",
+   "ro": "ū besyār khashmgīn ast.",
+   "ur": "وہ بہت غصے میں ہے۔",
+   "urRo": "woh bohat ghusse mein hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "He is joyful.",
+   "fa": "او شاد است.",
+   "ro": "ū shād ast.",
+   "ur": "وہ خوش ہے۔",
+   "urRo": "woh khush hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "He is noble.",
+   "fa": "او شریف است.",
+   "ro": "ū sharīf ast.",
+   "ur": "وہ عزت دار ہے۔",
+   "urRo": "woh izzat daar hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "This place is holy.",
+   "fa": "این مکان مقدس است.",
+   "ro": "īn makān moqaddas ast.",
+   "ur": "یہ جگہ مقدس ہے۔",
+   "urRo": "yeh jagah muqaddas hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "He is blessed.",
+   "fa": "او خوشبخت است.",
+   "ro": "ū khoshbakht ast.",
+   "ur": "وہ خوش قسمت ہے۔",
+   "urRo": "woh khush qismat hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "He is fortunate.",
+   "fa": "او خوش‌شانس است.",
+   "ro": "ū khosh-shāns ast.",
+   "ur": "وہ خوش نصیب ہے۔",
+   "urRo": "woh khush naseeb hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "He is unfortunate.",
+   "fa": "او بدبخت است.",
+   "ro": "ū badbakht ast.",
+   "ur": "وہ بدقسمت ہے۔",
+   "urRo": "woh bad qismat hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "He is wealthy.",
+   "fa": "او ثروتمند است.",
+   "ro": "ū sarvatmand ast.",
+   "ur": "وہ امیر ہے۔",
+   "urRo": "woh ameer hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "This is a normal matter.",
+   "fa": "این موضوع عادی است.",
+   "ro": "īn mowzūʿ ādī ast.",
+   "ur": "یہ معمول کی بات ہے۔",
+   "urRo": "yeh mamool ki baat hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "This is an unusual matter.",
+   "fa": "این موضوع غیرعادی است.",
+   "ro": "īn mowzūʿ gheyre-ādī ast.",
+   "ur": "یہ غیر معمولی بات ہے۔",
+   "urRo": "yeh ghair mamooli baat hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "This is a strange matter.",
+   "fa": "این موضوع عجیب است.",
+   "ro": "īn mowzūʿ ajīb ast.",
+   "ur": "یہ عجیب بات ہے۔",
+   "urRo": "yeh ajeeb baat hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "This place is familiar to me.",
+   "fa": "این مکان برای من آشناست.",
+   "ro": "īn makān barā-ye man āshnāst.",
+   "ur": "یہ جگہ میرے لیے جانی پہچانی ہے۔",
+   "urRo": "yeh jagah mere liye jaani pehchaani hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "This is domestic work.",
+   "fa": "این کار خانگی است.",
+   "ro": "īn kār-e khānegī ast.",
+   "ur": "یہ گھریلو کام ہے۔",
+   "urRo": "yeh gharelu kaam hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "This is a coastal city.",
+   "fa": "این شهر ساحلی است.",
+   "ro": "īn shahr-e sāhelī ast.",
+   "ur": "یہ ساحلی شہر ہے۔",
+   "urRo": "yeh saahili sheher hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "This land is fertile.",
+   "fa": "این زمین حاصلخیز است.",
+   "ro": "īn zamīn hāselkhīz ast.",
+   "ur": "یہ زمین زرخیز ہے۔",
+   "urRo": "yeh zameen zarkhaiz hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "He stares at me.",
+   "fa": "او به من خیره شده است.",
+   "ro": "ū be man khīre shode ast.",
+   "ur": "وہ مجھے گھورتا ہے۔",
+   "urRo": "woh mujhe ghoorta hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "He mumbles.",
+   "fa": "او زیر لب غرغر می‌کند.",
+   "ro": "ū zīr-e lab ghorghor mīkonad.",
+   "ur": "وہ بڑبڑاتا ہے۔",
+   "urRo": "woh badbadata hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "He trembles with cold.",
+   "fa": "او از سرما می‌لرزد.",
+   "ro": "ū az sarmā mīlarzad.",
+   "ur": "وہ سردی سے کانپتا ہے۔",
+   "urRo": "woh sardi se kaanpta hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "The child shivers with cold.",
+   "fa": "کودک از سرما به خود می‌لرزد.",
+   "ro": "kūdak az sarmā be khod mīlarzad.",
+   "ur": "بچہ سردی سے تھرتھراتا ہے۔",
+   "urRo": "bachcha sardi se thartharata hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "He fainted.",
+   "fa": "او بیهوش شد.",
+   "ro": "ū bīhūsh shod.",
+   "ur": "وہ بے ہوش ہو گیا۔",
+   "urRo": "woh behosh ho gaya.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "The house collapsed.",
+   "fa": "خانه فرو ریخت.",
+   "ro": "khāne forū rīkht.",
+   "ur": "گھر گر گیا۔",
+   "urRo": "ghar gir gaya.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "The child slides on the ice.",
+   "fa": "کودک روی یخ سر می‌خورد.",
+   "ro": "kūdak rū-ye yakh sor mīkhorad.",
+   "ur": "بچہ برف پر پھسلتا ہے۔",
+   "urRo": "bachcha barf par phisalta hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "The child rolls the ball.",
+   "fa": "کودک توپ را می‌غلتاند.",
+   "ro": "kūdak tūp rā mīghaltānad.",
+   "ur": "بچہ گیند لڑھکاتا ہے۔",
+   "urRo": "bachcha gaind ludhkata hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "The child swings on the swing.",
+   "fa": "کودک روی تاب تاب می‌خورد.",
+   "ro": "kūdak rū-ye tāb tāb mīkhorad.",
+   "ur": "بچہ جھولے پر جھولتا ہے۔",
+   "urRo": "bachcha jhoolay par jhoolta hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "The ball bounces.",
+   "fa": "توپ می‌پرد.",
+   "ro": "tūp mīparad.",
+   "ur": "گیند اچھلتی ہے۔",
+   "urRo": "gaind uchhalti hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "The child leaps.",
+   "fa": "کودک می‌پرد.",
+   "ro": "kūdak mīparad.",
+   "ur": "بچہ چھلانگ لگاتا ہے۔",
+   "urRo": "bachcha chhalaang lagata hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "He ascends the mountain.",
+   "fa": "او از کوه بالا می‌رود.",
+   "ro": "ū az kūh bālā mīravad.",
+   "ur": "وہ پہاڑ پر چڑھتا ہے۔",
+   "urRo": "woh pahaad par chadhta hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "He descends from the mountain.",
+   "fa": "او از کوه پایین می‌آید.",
+   "ro": "ū az kūh pāyīn mīāyad.",
+   "ur": "وہ پہاڑ سے اترتا ہے۔",
+   "urRo": "woh pahaad se utarta hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "He proclaims the news.",
+   "fa": "او خبر را اعلام می‌کند.",
+   "ro": "ū khabar rā eʿlām mīkonad.",
+   "ur": "وہ خبر کا اعلان کرتا ہے۔",
+   "urRo": "woh khabar ka elaan karta hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "The teacher scolds the child.",
+   "fa": "معلم کودک را سرزنش می‌کند.",
+   "ro": "moʿallem kūdak rā sarzanesh mīkonad.",
+   "ur": "استاد بچے کو ڈانٹتا ہے۔",
+   "urRo": "ustaad bachche ko daantta hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "He pleads.",
+   "fa": "او التماس می‌کند.",
+   "ro": "ū eltemās mīkonad.",
+   "ur": "وہ منت کرتا ہے۔",
+   "urRo": "woh minnat karta hai.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "He rejected the proposal.",
+   "fa": "او پیشنهاد را رد کرد.",
+   "ro": "ū pīshnahād rā rad kard.",
+   "ur": "اس نے تجویز رد کر دی۔",
+   "urRo": "us ne tajweez rad kar di.",
+   "v": "",
+   "w": []
+  },
+  {
+   "en": "He invented a new thing.",
+   "fa": "او چیز تازه‌ای اختراع کرد.",
+   "ro": "ū chīz-e tāze-ī ekhterāʿ kard.",
+   "ur": "اس نے نئی چیز ایجاد کی۔",
+   "urRo": "us ne nayi cheez ijaad ki.",
    "v": "",
    "w": []
   }
